@@ -7,7 +7,7 @@ import android.widget.Toast;
 
 import com.example.vishalkumar1.retrofit.R;
 import com.example.vishalkumar1.retrofit.constant.ProjectConst;
-import com.example.vishalkumar1.retrofit.model.Data;
+import com.example.vishalkumar1.retrofit.model.Users;
 import com.example.vishalkumar1.retrofit.rest.ApiClient;
 import com.example.vishalkumar1.retrofit.rest.ApiInterface;
 
@@ -23,25 +23,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(API_KEY.isEmpty()){
-            Toast.makeText(getApplicationContext(),"Enter a API KEY" ,Toast.LENGTH_LONG).show();
-            return;
-        }
+        //checkApi();
 
         ApiInterface apiservice = ApiClient.getClient().create(ApiInterface.class);
-        Call<Data> call = apiservice.getData(API_KEY);
-        call.enqueue(new Callback<Data>() {
+        Call<Users> call = apiservice.getGreet();
+        call.enqueue(new Callback<Users>() {
             @Override
-            public void onResponse(Call<Data> call, Response<Data> response) {
-                Log.d("Data" ,response.body().toString());
+            public void onResponse(Call<Users> call, Response<Users> response) {
+                Log.d("Data" ,response.body().getName());
             }
 
             @Override
-            public void onFailure(Call<Data> call, Throwable t) {
+            public void onFailure(Call<Users> call, Throwable t) {
                 Log.d("Data", "Error");
             }
         });
 
+    }
+
+    private void checkApi(){
+        if(API_KEY.isEmpty()){
+            Toast.makeText(getApplicationContext(),"Enter a API KEY" ,Toast.LENGTH_LONG).show();
+            return;
+        }
     }
 
 }
