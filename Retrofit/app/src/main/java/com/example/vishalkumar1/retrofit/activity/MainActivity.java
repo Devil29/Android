@@ -24,6 +24,12 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/*
+Thir project has been created by the Vishal Kumar
+Used url for API -https://getsandbox.com/sandboxes/retrofit#overview
+dependcies added Retrofit
+*/
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String API_KEY= ProjectConst.Api_Key;
