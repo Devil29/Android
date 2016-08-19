@@ -1,10 +1,14 @@
 package com.example.vishalkumar1.retrofit.rest;
 
 import com.example.vishalkumar1.retrofit.model.Data;
+import com.example.vishalkumar1.retrofit.model.User;
 import com.example.vishalkumar1.retrofit.model.Users;
+import com.google.gson.JsonObject;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -13,8 +17,18 @@ import retrofit2.http.Query;
  */
 public interface ApiInterface {
 
-    @GET("users/ffa")
-    Call<Users> getGreet();
+    @GET("users/{name}")
+    Call<User> getUser(@Path("name") String name);
+
+    @GET("users")
+    Call<Users> getAllUsers();
+
+    @GET("hello")
+    Call<JsonObject> getGreet();
+
+    @POST("users")
+    Call<JsonObject> CreateUser(@Body User user);
+
 
     @GET("movies/top_rated")
     Call<Data> getData(@Query("api_key") String apiKey);
