@@ -76,7 +76,19 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Data", "Error2");
             }
         });
-        
+        User user=new User("vishal");
+        Call<JsonObject> postUser = apiservice.CreateUser(user);
+        postUser.enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                Log.d("Data", response.body().toString());
+            }
+
+            @Override
+            public void onFailure(Call<JsonObject> call, Throwable t) {
+                Log.d("Data", "Error3");
+            }
+        });
     }
 
 }
