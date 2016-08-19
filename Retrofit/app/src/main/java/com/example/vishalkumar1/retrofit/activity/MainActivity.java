@@ -13,6 +13,13 @@ import com.example.vishalkumar1.retrofit.rest.ApiClient;
 import com.example.vishalkumar1.retrofit.rest.ApiInterface;
 import com.google.gson.JsonObject;
 
+import java.io.File;
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.util.Calendar;
+
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -38,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void apiCalls(){
         ApiInterface apiservice = ApiClient.getClient().create(ApiInterface.class);
+
+
         Call<User> call = apiservice.getUser("ffa");
         call.enqueue(new Callback<User>() {
             @Override
@@ -50,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Data", "Error");
             }
         });
+
+
 
         Call<Users> callUsers = apiservice.getAllUsers();
         callUsers.enqueue(new Callback<Users>() {
@@ -64,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
         Call<JsonObject> callGreet = apiservice.getGreet();
         callGreet.enqueue(new Callback<JsonObject>() {
             @Override
@@ -76,7 +89,10 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Data", "Error2");
             }
         });
-        User user=new User("vishal");
+
+
+        Calendar c = Calendar.getInstance();
+        User user=new User(""+ c.get(Calendar.SECOND));
         Call<JsonObject> postUser = apiservice.CreateUser(user);
         postUser.enqueue(new Callback<JsonObject>() {
             @Override
@@ -89,6 +105,25 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Data", "Error3");
             }
         });
+
+
+        MediaType MEDIA_TYPE_PNG = MediaType.parse("image/png");
+        File file = new File("/storage/emulated/0/Pictures/MyApp/test.png");
+        RequestBody requestBody = RequestBody.create(MEDIA_TYPE_PNG, file);
+        Call<JsonObject> postPic = apiservice.uploadImage("test", requestBody);
+        postPic.enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                Log.d("Data", response.body().toString());
+            }
+
+            @Override
+            public void onFailure(Call<JsonObject> call, Throwable t) {
+                Log.d("Data", "Error4");
+                t.printStackTrace();
+            }
+        });
+
     }
 
 }
