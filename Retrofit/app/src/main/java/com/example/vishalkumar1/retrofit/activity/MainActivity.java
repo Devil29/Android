@@ -124,6 +124,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        MediaType MEDIA_TYPE_MP4=MediaType.parse("video/mp4");
+        File videoFile = new File("/storage/emulated/0/Pictures/MyApp/test.mp4");
+        RequestBody requestBody1=RequestBody.create(MEDIA_TYPE_MP4, videoFile);
+        Call<JsonObject> postVideo =apiservice.uploadImage("test",requestBody1);
+        postVideo.enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                Log.d("Data", response.body().toString());
+            }
+
+            @Override
+            public void onFailure(Call<JsonObject> call, Throwable t) {
+                Log.d("Data", "Error5");
+            }
+        });
+
     }
 
 }
