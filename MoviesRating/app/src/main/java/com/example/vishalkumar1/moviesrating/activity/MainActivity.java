@@ -1,5 +1,6 @@
 package com.example.vishalkumar1.moviesrating.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -44,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view, int position) {
                 Movie movie = movies.get(position);
                 Toast.makeText(getApplicationContext(), movie.getTitle() + " is selected!", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(getApplicationContext(), MoviePageActivity.class);
+                startActivity(intent);
             }
 
             @Override
