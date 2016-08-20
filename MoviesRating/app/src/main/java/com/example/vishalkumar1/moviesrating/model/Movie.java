@@ -2,13 +2,14 @@ package com.example.vishalkumar1.moviesrating.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by vishal.kumar1 on 18/08/16.
  */
-public class Movie {
+public class Movie implements Serializable{
     @SerializedName("poster_path")
     private String posterPath;
 

@@ -18,6 +18,7 @@ import com.example.vishalkumar1.moviesrating.model.MovieResponse;
 import com.example.vishalkumar1.moviesrating.rest.ApiClient;
 import com.example.vishalkumar1.moviesrating.rest.ApiInterface;
 
+import java.io.Serializable;
 import java.util.List;
 
 import retrofit2.Call;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 Movie movie = movies.get(position);
                 Toast.makeText(getApplicationContext(), movie.getTitle() + " is selected!", Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(getApplicationContext(), MoviePageActivity.class);
+                intent.putExtra("Data", movie);
                 startActivity(intent);
             }
 
