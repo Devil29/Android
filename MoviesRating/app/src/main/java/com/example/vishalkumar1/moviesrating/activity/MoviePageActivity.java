@@ -31,6 +31,9 @@ public class MoviePageActivity extends AppCompatActivity {
         setRating();
         setLang();
         setAdult();
+        setOverview();
+        setYear();
+        setPopularity();
     }
 
 
@@ -57,6 +60,21 @@ public class MoviePageActivity extends AppCompatActivity {
         else{
             t.setText("No");
         }
+    }
+
+    private void setOverview(){
+        TextView t=(TextView)findViewById(R.id.txt_overview);
+        t.setText(movie.getOverview());
+    }
+
+    private void setYear(){
+        TextView t =(TextView)findViewById(R.id.txt_year);
+        t.setText(movie.getReleaseDate());
+    }
+
+    private void setPopularity(){
+        TextView t=(TextView)findViewById(R.id.txt_popularity);
+        t.setText(movie.getPopularity().toString());
     }
 
     private void setPoster(){
