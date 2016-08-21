@@ -28,15 +28,35 @@ public class MoviePageActivity extends AppCompatActivity {
     private void setData(){
         setTitle();
         setPoster();
+        setRating();
+        setLang();
+        setAdult();
     }
 
 
     private void setTitle(){
-        TextView t=(TextView)findViewById(R.id.textView);
+        TextView t=(TextView)findViewById(R.id.txt_title);
         t.setText(movie.getTitle());
+    }
 
-        TextView t1=(TextView)findViewById(R.id.textView1);
-        t1.setText(ProjectConst.Base_Image_URl + movie.getPosterPath());
+    private void setRating(){
+        TextView t=(TextView)findViewById(R.id.txt_imdb);
+        t.setText(movie.getVoteAverage().toString());
+    }
+
+    private void setLang(){
+        TextView t=(TextView)findViewById(R.id.txt_lang);
+        t.setText(movie.getOriginalLanguage());
+    }
+
+    private void setAdult(){
+        TextView t=(TextView)findViewById(R.id.txt_adult);
+        if(movie.isAdult()){
+            t.setText("Yes");
+        }
+        else{
+            t.setText("No");
+        }
     }
 
     private void setPoster(){

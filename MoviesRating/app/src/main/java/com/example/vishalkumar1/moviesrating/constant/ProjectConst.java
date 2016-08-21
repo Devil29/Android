@@ -5,6 +5,6 @@ package com.example.vishalkumar1.moviesrating.constant;
  */
 public class ProjectConst {
     public static final String Base_Url="http://api.themoviedb.org/3/";
-    public static final String Base_Image_URl="http://image.tmdb.org/t/p/w185/";
+    public static final String Base_Image_URl="http://image.tmdb.org/t/p/w300/";
     public static final String Api_Key="a9527b459a546d9eaff269d395c98a9e";
 }
