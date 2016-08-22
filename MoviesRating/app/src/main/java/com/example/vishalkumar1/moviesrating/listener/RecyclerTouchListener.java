@@ -6,7 +6,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.example.vishalkumar1.moviesrating.activity.MainActivity;
+import com.example.vishalkumar1.moviesrating.activity.TopMovieActivity;
 
 /**
  * Created by vishal.kumar1 on 21/08/16.
@@ -14,9 +14,9 @@ import com.example.vishalkumar1.moviesrating.activity.MainActivity;
 public class RecyclerTouchListener implements RecyclerView.OnItemTouchListener {
 
     private GestureDetector gestureDetector;
-    private MainActivity.ClickListener clickListener;
+    private TopMovieActivity.ClickListener clickListener;
 
-    public RecyclerTouchListener(Context context, final RecyclerView recyclerView, final MainActivity.ClickListener clickListener) {
+    public RecyclerTouchListener(Context context, final RecyclerView recyclerView, final TopMovieActivity.ClickListener clickListener) {
         this.clickListener = clickListener;
         gestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
             @Override
