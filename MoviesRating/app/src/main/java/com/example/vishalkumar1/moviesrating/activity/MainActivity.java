@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -16,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.vishalkumar1.moviesrating.R;
+import com.example.vishalkumar1.moviesrating.activity.fragment.TopRatedFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -33,6 +35,11 @@ public class MainActivity extends AppCompatActivity
         setupFabButton();
         setupNavigationDrawer();
         setToolbarTItle("MoviesRating");
+
+        fragmentManager = getSupportFragmentManager();
+        Fragment fragment =new TopRatedFragment();
+        fragmentManager.beginTransaction().replace(R.id.container_main,fragment).commitAllowingStateLoss();
+
     }
 
     @Override
