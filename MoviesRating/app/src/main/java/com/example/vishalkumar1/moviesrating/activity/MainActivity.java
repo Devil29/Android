@@ -1,5 +1,6 @@
 package com.example.vishalkumar1.moviesrating.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -29,9 +30,9 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         setupToolbar();
-        setToolbarTItle("UpComings");
         setupFabButton();
         setupNavigationDrawer();
+        setToolbarTItle("MoviesRating");
     }
 
     @Override
@@ -72,12 +73,14 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
+        if (id == R.id.upcoming) {
+            setToolbarTItle("Upcoming");
+        } else if (id == R.id.top_rated) {
+            setToolbarTItle("TopRated");
+            Intent intent=new Intent(this,TopMovieActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.latest_release) {
+            setToolbarTItle("Latest Realease");
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
@@ -97,7 +100,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void setToolbarTItle(String string){
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(string);
     }
 
