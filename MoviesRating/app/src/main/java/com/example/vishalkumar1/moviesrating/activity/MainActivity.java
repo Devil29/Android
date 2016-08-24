@@ -19,6 +19,7 @@ import android.view.MenuItem;
 import com.example.vishalkumar1.moviesrating.R;
 import com.example.vishalkumar1.moviesrating.activity.fragment.MoviePageFragment;
 import com.example.vishalkumar1.moviesrating.activity.fragment.TopRatedFragment;
+import com.example.vishalkumar1.moviesrating.activity.fragment.UpcomingMovieFragment;
 import com.example.vishalkumar1.moviesrating.model.Movie;
 
 public class MainActivity extends AppCompatActivity
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity
         setToolbarTItle("MoviesRating");
 
         fragmentManager = getSupportFragmentManager();
-        Fragment fragment =new TopRatedFragment();
+        Fragment fragment =new UpcomingMovieFragment();
         fragmentManager.beginTransaction().replace(R.id.container_main,fragment).commitAllowingStateLoss();
 
     }
@@ -84,8 +85,8 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.upcoming) {
             setToolbarTItle("Upcoming");
-            Intent intent=new Intent(this,TopMovieActivity.class);
-            startActivity(intent);
+            Fragment fragment =new UpcomingMovieFragment();
+            fragmentManager.beginTransaction().replace(R.id.container_main,fragment).commitAllowingStateLoss();
         } else if (id == R.id.top_rated) {
             setToolbarTItle("TopRated");
             Fragment fragment =new TopRatedFragment();
