@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    android:gravity="center"
     android:orientation="vertical">
 
     <TextView
@@ -13,6 +12,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:textColor="#44ff22"
+        android:layout_marginTop="100dp"
         android:text="Movie Rating"
         android:textSize="40sp"
         android:textStyle="bold" />
