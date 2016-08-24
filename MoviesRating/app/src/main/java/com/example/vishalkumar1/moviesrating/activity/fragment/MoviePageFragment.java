@@ -29,8 +29,6 @@ public class MoviePageFragment extends BaseFragment {
         super.onCreateView(inflater, container, savedInstanceState);
         movie= (Movie)getArguments().getSerializable("Data");
         View view=inflater.inflate(R.layout.fragment_movie_page,container,false);
-        //TextView t=(TextView)view.findViewById(R.id.txt_title);
-        //t.setText(movie.getTitle());
         setData(view);
         return view;
     }

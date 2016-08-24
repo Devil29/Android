@@ -84,10 +84,12 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.upcoming) {
             setToolbarTItle("Upcoming");
-        } else if (id == R.id.top_rated) {
-            setToolbarTItle("TopRated");
             Intent intent=new Intent(this,TopMovieActivity.class);
             startActivity(intent);
+        } else if (id == R.id.top_rated) {
+            setToolbarTItle("TopRated");
+            Fragment fragment =new TopRatedFragment();
+            fragmentManager.beginTransaction().replace(R.id.container_main,fragment).commitAllowingStateLoss();
         } else if (id == R.id.latest_release) {
             setToolbarTItle("Latest Realease");
         } else if (id == R.id.nav_manage) {
@@ -136,11 +138,6 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void moviePage(Movie movie){
-//        Fragment ldf = new MoviePageFragment();
-//        Bundle args = new Bundle();
-//        args.putSerializable("Data", movie);
-//        ldf.setArguments(args);
-//        getFragmentManager().beginTransaction().replace(R.id.container_main, ldf).commit();
         Fragment fragment = new MoviePageFragment();
         Bundle args=new Bundle();
         args.putSerializable("Data", movie);
