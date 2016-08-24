@@ -17,7 +17,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.vishalkumar1.moviesrating.R;
+import com.example.vishalkumar1.moviesrating.activity.fragment.MoviePageFragment;
 import com.example.vishalkumar1.moviesrating.activity.fragment.TopRatedFragment;
+import com.example.vishalkumar1.moviesrating.model.Movie;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -131,5 +133,18 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    public void moviePage(Movie movie){
+//        Fragment ldf = new MoviePageFragment();
+//        Bundle args = new Bundle();
+//        args.putSerializable("Data", movie);
+//        ldf.setArguments(args);
+//        getFragmentManager().beginTransaction().replace(R.id.container_main, ldf).commit();
+        Fragment fragment = new MoviePageFragment();
+        Bundle args=new Bundle();
+        args.putSerializable("Data", movie);
+        fragment.setArguments(args);
+        getSupportFragmentManager().beginTransaction().add(R.id.container_main,fragment).addToBackStack(null).commitAllowingStateLoss();
     }
 }

@@ -3,6 +3,7 @@ package com.example.vishalkumar1.moviesrating.activity.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.vishalkumar1.moviesrating.R;
+import com.example.vishalkumar1.moviesrating.activity.MainActivity;
 import com.example.vishalkumar1.moviesrating.activity.MoviePageActivity;
 import com.example.vishalkumar1.moviesrating.activity.TopMovieActivity;
 import com.example.vishalkumar1.moviesrating.adapter.MoviesAdapter;
@@ -64,9 +66,10 @@ public class TopRatedFragment extends BaseFragment {
             public void onClick(View view, int position) {
                 Movie movie = movies.get(position);
                 Toast.makeText(getActivity(), movie.getTitle() + " is selected!", Toast.LENGTH_SHORT).show();
-                Intent intent=new Intent(getActivity(), MoviePageActivity.class);
-                intent.putExtra("Data", movie);
-                startActivity(intent);
+//                Intent intent=new Intent(getActivity(), MoviePageActivity.class);
+//                intent.putExtra("Data", movie);
+//                startActivity(intent);
+                ((MainActivity)getActivity()).moviePage(movie);
             }
 
             @Override
