@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.vishalkumar1.moviesrating.R;
 import com.example.vishalkumar1.moviesrating.activity.fragment.MoviePageFragment;
@@ -71,8 +72,14 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if(id == R.id.search_movie){
+            Toast.makeText(getApplicationContext(),"Search For Movie", Toast.LENGTH_SHORT).show();
+        }
+        else if(id == R.id.search_tv){
+            Toast.makeText(getApplicationContext(),"Search For TvSeries", Toast.LENGTH_SHORT).show();
+        }
+        else if(id == R.id.search_person){
+            Toast.makeText(getApplicationContext(), "Search For Person", Toast.LENGTH_SHORT).show();
         }
 
         return super.onOptionsItemSelected(item);

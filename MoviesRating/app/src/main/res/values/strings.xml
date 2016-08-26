@@ -6,4 +6,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="search_movie">Search Movies</string>
+    <string name="search_tv">Search TvSeries</string>
+    <string name="search_person">Search Person</string>
 </resources>
