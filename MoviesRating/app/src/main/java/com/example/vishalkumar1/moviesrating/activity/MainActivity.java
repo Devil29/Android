@@ -18,6 +18,8 @@ import android.view.MenuItem;
 
 import com.example.vishalkumar1.moviesrating.R;
 import com.example.vishalkumar1.moviesrating.activity.fragment.MoviePageFragment;
+import com.example.vishalkumar1.moviesrating.activity.fragment.NowPlayingMovieFragment;
+import com.example.vishalkumar1.moviesrating.activity.fragment.PopoularMovieFragment;
 import com.example.vishalkumar1.moviesrating.activity.fragment.TopRatedFragment;
 import com.example.vishalkumar1.moviesrating.activity.fragment.UpcomingMovieFragment;
 import com.example.vishalkumar1.moviesrating.model.Movie;
@@ -91,10 +93,14 @@ public class MainActivity extends AppCompatActivity
             setToolbarTItle("TopRated");
             Fragment fragment =new TopRatedFragment();
             fragmentManager.beginTransaction().replace(R.id.container_main,fragment).commitAllowingStateLoss();
-        } else if (id == R.id.latest_release) {
-            setToolbarTItle("Latest Realease");
-        } else if (id == R.id.nav_manage) {
-
+        } else if (id == R.id.popular) {
+            setToolbarTItle("Popular");
+            Fragment fragment =new PopoularMovieFragment();
+            fragmentManager.beginTransaction().replace(R.id.container_main,fragment).commitAllowingStateLoss();
+        } else if (id == R.id.now_playing) {
+            setToolbarTItle("Now Playing");
+            Fragment fragment =new NowPlayingMovieFragment();
+            fragmentManager.beginTransaction().replace(R.id.container_main,fragment).commitAllowingStateLoss();
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
