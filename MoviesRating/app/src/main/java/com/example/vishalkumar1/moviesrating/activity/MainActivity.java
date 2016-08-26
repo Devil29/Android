@@ -1,6 +1,5 @@
 package com.example.vishalkumar1.moviesrating.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,7 +18,7 @@ import android.view.MenuItem;
 import com.example.vishalkumar1.moviesrating.R;
 import com.example.vishalkumar1.moviesrating.activity.fragment.MoviePageFragment;
 import com.example.vishalkumar1.moviesrating.activity.fragment.NowPlayingMovieFragment;
-import com.example.vishalkumar1.moviesrating.activity.fragment.PopoularMovieFragment;
+import com.example.vishalkumar1.moviesrating.activity.fragment.PopularMovieFragment;
 import com.example.vishalkumar1.moviesrating.activity.fragment.TopRatedFragment;
 import com.example.vishalkumar1.moviesrating.activity.fragment.UpcomingMovieFragment;
 import com.example.vishalkumar1.moviesrating.model.Movie;
@@ -95,7 +94,7 @@ public class MainActivity extends AppCompatActivity
             fragmentManager.beginTransaction().replace(R.id.container_main,fragment).commitAllowingStateLoss();
         } else if (id == R.id.popular) {
             setToolbarTItle("Popular");
-            Fragment fragment =new PopoularMovieFragment();
+            Fragment fragment =new PopularMovieFragment();
             fragmentManager.beginTransaction().replace(R.id.container_main,fragment).commitAllowingStateLoss();
         } else if (id == R.id.now_playing) {
             setToolbarTItle("Now Playing");

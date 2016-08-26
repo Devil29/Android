@@ -12,4 +12,6 @@
     <color name="colorGrey">#707070</color>
     <color name="colorGreyLight">#8A8A8A</color>
     <color name="colorbg">#ff3333</color>
+    <color name="viewBg">#f1f5f8</color>
+    <color name="album_title">#4c4c4c</color>
 </resources>

@@ -30,13 +30,13 @@ import retrofit2.Response;
 /**
  * Created by vishal.kumar1 on 26/08/16.
  */
-public class PopoularMovieFragment extends BaseFragment {
+public class PopularMovieFragment extends BaseFragment {
 
     private static final String API_KEY= ProjectConst.Api_Key;
     List<Movie> movies;
     View view;
 
-    public PopoularMovieFragment(){
+    public PopularMovieFragment(){
 
     }
 
