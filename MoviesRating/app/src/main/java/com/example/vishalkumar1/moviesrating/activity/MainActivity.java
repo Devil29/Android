@@ -20,6 +20,7 @@ import com.example.vishalkumar1.moviesrating.R;
 import com.example.vishalkumar1.moviesrating.activity.fragment.MoviePageFragment;
 import com.example.vishalkumar1.moviesrating.activity.fragment.NowPlayingMovieFragment;
 import com.example.vishalkumar1.moviesrating.activity.fragment.PopularMovieFragment;
+import com.example.vishalkumar1.moviesrating.activity.fragment.SearchMovieFragment;
 import com.example.vishalkumar1.moviesrating.activity.fragment.TopRatedFragment;
 import com.example.vishalkumar1.moviesrating.activity.fragment.UpcomingMovieFragment;
 import com.example.vishalkumar1.moviesrating.model.Movie;
@@ -74,6 +75,8 @@ public class MainActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if(id == R.id.search_movie){
             Toast.makeText(getApplicationContext(),"Search For Movie", Toast.LENGTH_SHORT).show();
+            Fragment fragment= new SearchMovieFragment();
+            fragmentManager.beginTransaction().replace(R.id.container_main, fragment).commitAllowingStateLoss();
         }
         else if(id == R.id.search_tv){
             Toast.makeText(getApplicationContext(),"Search For TvSeries", Toast.LENGTH_SHORT).show();
