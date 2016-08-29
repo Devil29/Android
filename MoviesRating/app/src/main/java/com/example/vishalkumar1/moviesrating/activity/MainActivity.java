@@ -21,6 +21,7 @@ import com.example.vishalkumar1.moviesrating.activity.fragment.MoviePageFragment
 import com.example.vishalkumar1.moviesrating.activity.fragment.NowPlayingMovieFragment;
 import com.example.vishalkumar1.moviesrating.activity.fragment.PopularMovieFragment;
 import com.example.vishalkumar1.moviesrating.activity.fragment.SearchMovieFragment;
+import com.example.vishalkumar1.moviesrating.activity.fragment.SearchResultFragment;
 import com.example.vishalkumar1.moviesrating.activity.fragment.TopRatedFragment;
 import com.example.vishalkumar1.moviesrating.activity.fragment.UpcomingMovieFragment;
 import com.example.vishalkumar1.moviesrating.model.Movie;
@@ -159,5 +160,13 @@ public class MainActivity extends AppCompatActivity
         args.putSerializable("Data", movie);
         fragment.setArguments(args);
         getSupportFragmentManager().beginTransaction().add(R.id.container_main,fragment).addToBackStack(null).commitAllowingStateLoss();
+    }
+
+    public void SearchMovieResult(String searchtext){
+        Fragment fragment =new SearchResultFragment();
+        Bundle args=new Bundle();
+        args.putString("Data",searchtext);
+        fragment.setArguments(args);
+        getSupportFragmentManager().beginTransaction().replace(R.id.container_main,fragment).commitAllowingStateLoss();
     }
 }

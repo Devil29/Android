@@ -25,5 +25,10 @@ public interface ApiInterface {
 
     @GET("movie/{id}")
     Call<MovieResponse> getMovieDetails(@Path("id") int id, @Query("api_key") String apiKey);
+
+    //http://api.themoviedb.org/3/search/movie?api_key=a9527b459a546d9eaff269d395c98a9e&query=batman
+    @GET("search/movie")
+    Call<MovieResponse> searchMovies(@Query("api_key") String apiKey,@Query("query") String query);
+
 }
 

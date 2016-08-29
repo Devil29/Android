@@ -9,7 +9,7 @@
         android:layout_height="wrap_content">
 
         <AutoCompleteTextView
-            android:id="@+id/search_movie"
+            android:id="@+id/txt_search_movie"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/txt_search_movie"
