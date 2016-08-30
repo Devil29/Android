@@ -21,7 +21,11 @@ import com.example.vishalkumar1.moviesrating.activity.fragment.MoviePageFragment
 import com.example.vishalkumar1.moviesrating.activity.fragment.NowPlayingMovieFragment;
 import com.example.vishalkumar1.moviesrating.activity.fragment.PopularMovieFragment;
 import com.example.vishalkumar1.moviesrating.activity.fragment.SearchMovieFragment;
-import com.example.vishalkumar1.moviesrating.activity.fragment.SearchResultFragment;
+import com.example.vishalkumar1.moviesrating.activity.fragment.SearchMResultFragment;
+import com.example.vishalkumar1.moviesrating.activity.fragment.SearchPResultFragment;
+import com.example.vishalkumar1.moviesrating.activity.fragment.SearchPersonFragment;
+import com.example.vishalkumar1.moviesrating.activity.fragment.SearchTResultFragment;
+import com.example.vishalkumar1.moviesrating.activity.fragment.SearchTvFragment;
 import com.example.vishalkumar1.moviesrating.activity.fragment.TopRatedFragment;
 import com.example.vishalkumar1.moviesrating.activity.fragment.UpcomingMovieFragment;
 import com.example.vishalkumar1.moviesrating.model.Movie;
@@ -81,9 +85,13 @@ public class MainActivity extends AppCompatActivity
         }
         else if(id == R.id.search_tv){
             Toast.makeText(getApplicationContext(),"Search For TvSeries", Toast.LENGTH_SHORT).show();
+            Fragment fragment= new SearchTvFragment();
+            fragmentManager.beginTransaction().replace(R.id.container_main, fragment).commitAllowingStateLoss();
         }
         else if(id == R.id.search_person){
             Toast.makeText(getApplicationContext(), "Search For Person", Toast.LENGTH_SHORT).show();
+            Fragment fragment= new SearchPersonFragment();
+            fragmentManager.beginTransaction().replace(R.id.container_main, fragment).commitAllowingStateLoss();
         }
 
         return super.onOptionsItemSelected(item);
@@ -163,7 +171,23 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void SearchMovieResult(String searchtext){
-        Fragment fragment =new SearchResultFragment();
+        Fragment fragment =new SearchMResultFragment();
+        Bundle args=new Bundle();
+        args.putString("Data",searchtext);
+        fragment.setArguments(args);
+        getSupportFragmentManager().beginTransaction().replace(R.id.container_main,fragment).commitAllowingStateLoss();
+    }
+
+    public void SearchTvResult(String searchtext){
+        Fragment fragment =new SearchTResultFragment();
+        Bundle args=new Bundle();
+        args.putString("Data",searchtext);
+        fragment.setArguments(args);
+        getSupportFragmentManager().beginTransaction().replace(R.id.container_main,fragment).commitAllowingStateLoss();
+    }
+
+    public void SearchPersonResult(String searchtext){
+        Fragment fragment =new SearchPResultFragment();
         Bundle args=new Bundle();
         args.putString("Data",searchtext);
         fragment.setArguments(args);

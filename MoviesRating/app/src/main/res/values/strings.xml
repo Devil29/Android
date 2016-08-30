@@ -10,4 +10,6 @@
     <string name="search_tv">Search TvSeries</string>
     <string name="search_person">Search Person</string>
     <string name="txt_search_movie">Search Your Movie</string>
+    <string name="txt_search_tv">Search TV Series</string>
+    <string name="txt_search_person">Search For Celebrity</string>
 </resources>

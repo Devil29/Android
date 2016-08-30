@@ -30,5 +30,12 @@ public interface ApiInterface {
     @GET("search/movie")
     Call<MovieResponse> searchMovies(@Query("api_key") String apiKey,@Query("query") String query);
 
+    @GET("search/tv")
+    Call<MovieResponse> searchTv(@Query("api_key") String apiKey,@Query("query") String query);
+
+    @GET("search/person")
+    Call<MovieResponse> searchPerson(@Query("api_key") String apiKey,@Query("query") String query);
+
+
 }
 

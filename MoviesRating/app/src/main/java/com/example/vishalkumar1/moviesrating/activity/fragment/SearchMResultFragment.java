@@ -30,14 +30,14 @@ import retrofit2.Response;
 /**
  * Created by vishal.kumar1 on 29/08/16.
  */
-public class SearchResultFragment extends BaseFragment {
+public class SearchMResultFragment extends BaseFragment {
 
     private static final String API_KEY= ProjectConst.Api_Key;
     private static String searchMovie="";
     List<Movie> movies;
     View view;
 
-    public SearchResultFragment(){
+    public SearchMResultFragment(){
 
     }
 

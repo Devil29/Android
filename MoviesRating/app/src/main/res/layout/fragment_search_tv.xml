@@ -10,11 +10,11 @@
         android:layout_height="wrap_content">
 
         <AutoCompleteTextView
-            android:id="@+id/txt_search_movie"
+            android:id="@+id/txt_search_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="@string/txt_search_movie"
+            android:hint="@string/txt_search_tv"
             android:maxLines="1"
             android:singleLine="true" />
 
@@ -27,7 +27,7 @@
         android:text="Submit"
         android:background="@color/colorbg"
         android:textColor="#ffffff"
-        android:id="@+id/btn_searchMovie"
+        android:id="@+id/btn_searchTv"
         android:layout_gravity="center_horizontal" />
 
 </LinearLayout>
